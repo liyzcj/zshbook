@@ -1,0 +1,985 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>转义字符 · Zsh 简介</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Li Yanzhe <liyz0912@gmail.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="conditional.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../introduction/">
+            
+                <a href="../../introduction/">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../introduction/whyzsh.html">
+            
+                <a href="../../introduction/whyzsh.html">
+            
+                    
+                    为什么选择ZSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../introduction/exclude.html">
+            
+                <a href="../../introduction/exclude.html">
+            
+                    
+                    不涉及部分
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    配置ZSH
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../startfile.html">
+            
+                <a href="../startfile.html">
+            
+                    
+                    初始文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../options.html">
+            
+                <a href="../options.html">
+            
+                    
+                    可配置选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    提示符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.3.1" data-path="escape.html">
+            
+                <a href="escape.html">
+            
+                    
+                    转义字符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="conditional.html">
+            
+                <a href="conditional.html">
+            
+                    
+                    条件表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="format.html">
+            
+                <a href="format.html">
+            
+                    
+                    格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../others/">
+            
+                <a href="../others/">
+            
+                    
+                    查看其他用户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../others/format.html">
+            
+                <a href="../others/format.html">
+            
+                    
+                    格式化登录、注销监视器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../convenience/">
+            
+                <a href="../../convenience/">
+            
+                    
+                    易用性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../convenience/alias.html">
+            
+                <a href="../../convenience/alias.html">
+            
+                    
+                    别名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../convenience/cdstory.html">
+            
+                <a href="../../convenience/cdstory.html">
+            
+                    
+                    cd的整个故事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../convenience/dirstack.html">
+            
+                <a href="../../convenience/dirstack.html">
+            
+                    
+                    目录栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../convenience/braceexpansion.html">
+            
+                <a href="../../convenience/braceexpansion.html">
+            
+                    
+                    大括号扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../convenience/history/">
+            
+                <a href="../../convenience/history/">
+            
+                    
+                    命令历史
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../convenience/history/usefc.html">
+            
+                <a href="../../convenience/history/usefc.html">
+            
+                    
+                    使用fc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../../convenience/history/history_expansion.html">
+            
+                <a href="../../convenience/history/history_expansion.html">
+            
+                    
+                    命令历史扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../program/">
+            
+                <a href="../../program/">
+            
+                    
+                    zsh编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../program/parameter/">
+            
+                <a href="../../program/parameter/">
+            
+                    
+                    参数：概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../program/parameter/array.html">
+            
+                <a href="../../program/parameter/array.html">
+            
+                    
+                    数组参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../program/parameter/subscript.html">
+            
+                <a href="../../program/parameter/subscript.html">
+            
+                    
+                    下标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../program/parameter/expansion.html">
+            
+                <a href="../../program/parameter/expansion.html">
+            
+                    
+                    参数扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../program/filename/">
+            
+                <a href="../../program/filename/">
+            
+                    
+                    文件名通配符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../program/filename/modifier.html">
+            
+                <a href="../../program/filename/modifier.html">
+            
+                    
+                    修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../program/filename/qualifier.html">
+            
+                <a href="../../program/filename/qualifier.html">
+            
+                    
+                    操作符和限定符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../completion/">
+            
+                <a href="../../completion/">
+            
+                    
+                    自定义补全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../completion/start.html">
+            
+                <a href="../../completion/start.html">
+            
+                    
+                    了解自动补全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../completion/examples.html">
+            
+                <a href="../../completion/examples.html">
+            
+                    
+                    更多实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../ammenities/">
+            
+                <a href="../../ammenities/">
+            
+                    
+                    额外功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../ammenities/restricted.html">
+            
+                <a href="../../ammenities/restricted.html">
+            
+                    
+                    限制模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../ammenities/emulaltion.html">
+            
+                <a href="../../ammenities/emulaltion.html">
+            
+                    
+                    模拟其他shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../moreinfo.html">
+            
+                <a href="../../moreinfo.html">
+            
+                    
+                    更多信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../final.html">
+            
+                <a href="../../final.html">
+            
+                    
+                    终
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >转义字符</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8F6C;&#x4E49;&#x5B57;&#x7B26;">&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</h1>
+<p>&#x901A;&#x8FC7;&#x7279;&#x6B8A;&#x7684;<strong>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</strong>&#x5B9A;&#x5236;&#x4F60;&#x7684;&#x63D0;&#x793A;&#x7B26;&#x662F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x4F46;&#x662F;&#x91CD;&#x8981;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6709;&#x8BB8;&#x591A;&#x7684;<strong>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</strong>&#x4EE3;&#x8868;&#x4E0D;&#x540C;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5927;&#x90E8;&#x5206;&#x8F6C;&#x79FB;&#x5B57;&#x7B26;&#x7531;&#x7B26;&#x53F7;<strong><code>%</code></strong>&#x5F00;&#x59CB;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5728; <strong><code>PROMPT</code></strong> &#x53D8;&#x91CF;&#x5185;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x8F6C;&#x79FB;&#x5B57;&#x7B26;&#x90FD;&#x4F1A;&#x7531;&#x5B83;&#x4EEC;&#x4EE3;&#x8868;&#x7684;&#x4FE1;&#x606F;&#x4EE3;&#x66FF;&#x3002;</p>
+<p>&#x4E00;&#x4E9B;&#x8F6C;&#x79FB;&#x5B57;&#x7B26;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53EF;&#x9009;&#x7684;<strong>&#x6574;&#x578B;&#x53C2;&#x6570;</strong>&#xFF0C;&#x5B83;&#x7D27;&#x8DDF;&#x5728;<strong><code>%</code></strong>&#x7B26;&#x53F7;<strong>&#x4E4B;&#x540E;</strong>&#x5E76;&#x5728;&#x8F6C;&#x79FB;&#x5B57;&#x7B26;<strong>&#x4E4B;&#x524D;</strong>&#x3002;</p>
+<h3 id="&#x8F6C;&#x79FB;&#x5E8F;&#x5217;&#x548C;&#x63CF;&#x8FF0;">&#x8F6C;&#x79FB;&#x5E8F;&#x5217;&#x548C;&#x63CF;&#x8FF0;</h3>
+<p>&#x5DE6;&#x8FB9;&#x662F;&#x8F6C;&#x79FB;&#x5B57;&#x7B26;&#xFF0C;&#x53F3;&#x8FB9;&#x662F;&#x5B83;&#x4EEC;&#x4EE3;&#x8868;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x65B0;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x4EE5;&#x540E;&#x6DFB;&#x52A0;&#x3002;&#x53C2;&#x8003;&#x4EE5;&#x4E0B;&#x624B;&#x518C;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x5217;&#x8868;&#xFF1A;</p>
+<pre><code class="lang-shell">man zshmisc
+</code></pre>
+<ul>
+<li>&#x5B57;&#x7B26;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</th>
+<th>&#x4EE3;&#x8868;&#x4FE1;&#x606F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%%</code></td>
+<td><code>%</code></td>
+</tr>
+<tr>
+<td><code>%)</code></td>
+<td><code>)</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x76EE;&#x5F55;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</th>
+<th>&#x4EE3;&#x8868;&#x4FE1;&#x606F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%d</code></td>
+<td>&#x5F53;&#x524D;&#x76EE;&#x5F55;<code>%PWD</code></td>
+</tr>
+<tr>
+<td><code>%/</code></td>
+<td>&#x548C;<code>%d</code>&#x76F8;&#x540C;</td>
+</tr>
+<tr>
+<td><code>%~</code></td>
+<td><code>%PWD</code>, &#x5982;&#x679C;&#x4E3A;<code>%HOME</code>&#xFF0C;&#x663E;&#x793A;<code>~</code></td>
+</tr>
+<tr>
+<td><code>%c</code></td>
+<td><code>PWD</code>&#x5C3E;&#x90E8;&#x7EC4;&#x4EF6;&#x3002;&#x82E5;&#x60F3;&#x6DFB;&#x52A0;<code>n</code>&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;<code>%nc</code></td>
+</tr>
+<tr>
+<td><code>%.</code></td>
+<td>&#x548C;<code>%c</code>&#x76F8;&#x540C;</td>
+</tr>
+<tr>
+<td><code>%C</code></td>
+<td>&#x4E0E;<code>%c</code>&#xFF0C;<code>%</code>.&#x76F8;&#x4F3C;&#xFF0C;&#x9664;&#x4E86;<code>~</code>&#x4E0D;&#x663E;&#x793A;&#x76EE;&#x5F55;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x4E3B;&#x673A;&#x540D;&#x4FE1;&#x606F;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</th>
+<th>&#x4EE3;&#x8868;&#x4FE1;&#x606F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%M</code></td>
+<td>&#x5168;&#x90E8;&#x4E3B;&#x673A;&#x540D;</td>
+</tr>
+<tr>
+<td><code>%m</code></td>
+<td>&#x4E3B;&#x673A;&#x540D;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;<code>.</code> &#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>%nm</code>&#x4EE3;&#x8868;&#x7B2C;<code>n</code>&#x4E2A;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x4FE1;&#x606F;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</th>
+<th>&#x4EE3;&#x8868;&#x4FE1;&#x606F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%t</code></td>
+<td>&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;12&#x5C0F;&#x65F6;&#x5236;&#xFF0C;<code>AM/PM</code>&#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td><code>%@</code></td>
+<td>&#x4E0E;<code>%t</code>&#x76F8;&#x540C;</td>
+</tr>
+<tr>
+<td><code>%T</code></td>
+<td>&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;24&#x5C0F;&#x65F6;&#x5236;</td>
+</tr>
+<tr>
+<td><code>%*</code></td>
+<td>&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;24&#x5C0F;&#x65F6;&#x5236;&#xFF0C;&#x5305;&#x542B;&#x79D2;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5F53;&#x524D;&#x65E5;&#x671F;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</th>
+<th>&#x4EE3;&#x8868;&#x4FE1;&#x606F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%w</code></td>
+<td>&#x5F53;&#x524D;&#x65E5;&#x671F;&#xFF0C;<code>day-dd</code> &#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td><code>%W</code></td>
+<td>&#x5F53;&#x524D;&#x65E5;&#x671F;&#xFF0C;<code>mm/dd/yy</code>&#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td><code>%D</code></td>
+<td>&#x5F53;&#x524D;&#x65E5;&#x671F;&#xFF0C;<code>yy-mm-dd</code>&#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td><code>%D{string}</code></td>
+<td>&#x5B57;&#x7B26;&#x4E32;&#x4F7F;&#x7528;<code>strftime</code>&#x51FD;&#x6570;&#x683C;&#x5F0F;&#x5316;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x6742;&#x9879;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</th>
+<th>&#x4EE3;&#x8868;&#x4FE1;&#x606F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%h</code></td>
+<td>&#x5F53;&#x524D;&#x5386;&#x53F2;&#x65F6;&#x95F4;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td><code>%!</code></td>
+<td>&#x4E0E;<code>%h</code>&#x76F8;&#x540C;</td>
+</tr>
+<tr>
+<td><code>%L</code></td>
+<td><code>%SHLVL</code> &#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td><code>%n</code></td>
+<td>&#x7B49;&#x4E8E; <code>%USERNAME</code></td>
+</tr>
+<tr>
+<td><code>%l</code></td>
+<td>&#x7528;&#x6237;&#x767B;&#x5F55;&#x7684;&#x884C;&#xFF08;<code>tty</code>&#xFF09;</td>
+</tr>
+<tr>
+<td><code>%?</code></td>
+<td>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x8FD4;&#x56DE;&#x7801;</td>
+</tr>
+<tr>
+<td><code>%_</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>%E</code></td>
+<td>&#x6E05;&#x9664;&#x81F3;&#x884C;&#x5C3E;</td>
+</tr>
+<tr>
+<td><code>%#</code></td>
+<td>&#x5982;&#x679C;<code>shell</code>&#x4F7F;&#x7528;&#x6743;&#x9650;&#x8FD0;&#x884C;&#x5C31;&#x662F;<code>#</code>&#xFF0C;&#x5426;&#x5219;&#x662F;<code>%</code></td>
+</tr>
+<tr>
+<td><code>%v</code></td>
+<td><code>psvar</code>&#x6570;&#x7EC4;&#x53C2;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 提示符">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="conditional.html" class="navigation navigation-next " aria-label="Next page: 条件表示">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"转义字符","level":"1.3.3.1","depth":3,"next":{"title":"条件表示","level":"1.3.3.2","depth":3,"path":"configure/prompts/conditional.md","ref":"configure/prompts/conditional.md","articles":[]},"previous":{"title":"提示符","level":"1.3.3","depth":2,"path":"configure/prompts/README.md","ref":"configure/prompts/README.md","articles":[{"title":"转义字符","level":"1.3.3.1","depth":3,"path":"configure/prompts/escape.md","ref":"configure/prompts/escape.md","articles":[]},{"title":"条件表示","level":"1.3.3.2","depth":3,"path":"configure/prompts/conditional.md","ref":"configure/prompts/conditional.md","articles":[]},{"title":"格式化","level":"1.3.3.3","depth":3,"path":"configure/prompts/format.md","ref":"configure/prompts/format.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-comscore","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Li Yanzhe <liyz0912@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zsh 简介","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"A GitBook about Zsh","extension":null},"file":{"path":"configure/prompts/escape.md","mtime":"2018-09-23T21:04:30.517Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-23T21:07:52.010Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
