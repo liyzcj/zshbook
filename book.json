@@ -1,0 +1,35 @@
+{
+    "author": "Li Yanzhe <liyz0912@gmail.com>",
+    "description": "A GitBook about Zsh",
+    "extension": null,
+    "generator": "site",
+    "links": {
+        "sharing": {
+            "all": null,
+            "facebook": null,
+            "google": null,
+            "twitter": null,
+            "weibo": null
+        }
+    },
+    "pdf": {
+        "fontSize": 12,
+        "footerTemplate": null,
+        "headerTemplate": null,
+        "margin": {
+            "bottom": 36,
+            "left": 62,
+            "right": 62,
+            "top": 36
+        },
+        "pageNumbers": false,
+        "paperSize": "a4"
+    },
+    "plugins": [
+        "theme-comscore",
+        "splitter",
+        "toggle-chapters"
+    ],
+    "title": "Zsh 简介",
+    "variables": {}
+}
